@@ -86,3 +86,9 @@ nav a {
     left: 0;
 }
 
+.main_content img {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: auto;
+}
