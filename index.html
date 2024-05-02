@@ -12,7 +12,17 @@
                 if (buttonId === 1) {
                     filePath = 'contents\\lab1_contents\\1.html';
                 } else if (buttonId === 2) {
-                    filePath = '2.html';
+                    filePath = 'contents\\lab1_contents\\2.html';
+                } else if (buttonId === 3) {
+                    filePath = 'contents\\lab1_contents\\3.html';
+                } else if (buttonId === 4) {
+                    filePath = 'contents\\lab1_contents\\4.html';
+                } else if (buttonId === 5) {
+                    filePath = 'contents\\lab1_contents\\5.html';
+                } else if (buttonId === 6) {
+                    filePath = 'contents\\lab1_contents\\6.html';
+                } else if (buttonId === 7) {
+                    filePath = 'contents\\lab1_contents\\7.html';
                 }
                 console.log("Значение filePath:", filePath);
                 var xhr = new XMLHttpRequest();
@@ -76,7 +86,6 @@
             <button onclick="updateContent(7)">Висновки</button>
         </aside>
         <section id="content_area">
-            <iframe id="iframe_content" style="width:100%;height:100%;"></iframe>
         </section>
 
         </main>

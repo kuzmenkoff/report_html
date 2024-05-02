@@ -117,13 +117,14 @@ aside button:active {
     height: auto;
     width: 75%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
+    padding-left: 30px;
+    font-size: 18px;
 }
 
 main {
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    display: flex;        /* Включаем Flexbox */
+    display: flex;     
     flex-direction: row; 
 }
