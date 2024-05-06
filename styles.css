@@ -123,6 +123,7 @@ aside button:active {
     width: 75%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding-left: 30px;
+    padding-right: 30px;
     font-size: 18px;
 }
 
@@ -143,6 +144,7 @@ img {
     display: block;
     margin: auto;
     min-width: 30%;
+    max-width: 80%;
     border-style: solid;
     border-width: 2px;
 }

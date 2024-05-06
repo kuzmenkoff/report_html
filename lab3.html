@@ -5,209 +5,99 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IP-11 Kuzmenkov Dmytro report files</title>
         <link rel="stylesheet" href="styles.css">
+        <script>
+            function updateContent(buttonId) {
+                var content = document.getElementById('content_area');
+                var filePath = '';
+                if (buttonId === 1) {
+                    filePath = 'contents\\lab3_contents\\1.html';
+                } else if (buttonId === 2) {
+                    filePath = 'contents\\lab3_contents\\2.html';
+                } else if (buttonId === 3) {
+                    filePath = 'contents\\lab3_contents\\3.html';
+                } else if (buttonId === 4) {
+                    filePath = 'contents\\lab3_contents\\4.html';
+                } else if (buttonId === 5) {
+                    filePath = 'contents\\lab3_contents\\5.html';
+                } else if (buttonId === 6) {
+                    filePath = 'contents\\lab3_contents\\6.html';
+                } else if (buttonId === 7) {
+                    filePath = 'contents\\lab3_contents\\7.html';
+                } else if (buttonId === 8) {
+                    filePath = 'contents\\lab3_contents\\8.html';
+                } else if (buttonId === 9) {
+                    filePath = 'contents\\lab3_contents\\9.html';
+                } else if (buttonId === 10) {
+                    filePath = 'contents\\lab3_contents\\10.html';
+                }
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', filePath, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            content.innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Error loading the file: ', xhr.statusText);
+                            content.innerHTML = '<p>Failed to load content.</p>';
+                        }
+                    }
+                };
+                xhr.send();
+            }
+        </script>
     </head>
     <body>
         <header>
             <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ З ДИСЦИПЛІНИ "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБОК"</h1>
             <h2>Студент групи ІП-11 Кузьменков Дмитро Олегович</h2>
-            <nav>
-                <a href="index.html">
-                    <div class = "nav_block">
-                        <span>Лабораторна робота №1</span>
-                    </div>
-                </a>
-                <a href="lab2.html">
-                    <div class = "nav_block">
-                        <span>Лабораторна робота №2</span>
-                    </div>
-                </a>
-                <a href="lab3.html">
-                    <div class = "nav_block">
-                        <span>Лабораторна робота №3</span>
-                    </div>
-                </a>
-                <a href="lab4.html">
-                    <div class = "nav_block">
-                        <span>Лабораторна робота №4</span>
-                    </div>
-                </a>
-                <a href="lab5.html">
-                    <div class = "nav_block">
-                        <span>Лабораторна робота №5</span>
-                    </div>
-                </a>
-            </nav>
         </header>
-        <div class = "main_content">
-            <h3>Лабораторна робота №3</h3>
-            <h4>Тема лабораторної роботи: </h4>
-            <p>Верстка HTML-документу. Блокова верстка. Верстка засобами CSS та FLEXBOX</p>
-            <h4>Мета лабораторної роботи: </h4>
-            <p>⎯ придбати практичні навички роботи верстки сторінок засобами CSS, верстки на
-                основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-
-                сторінок<br>
-                ⎯  придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX
-            </p>
-            <h4>Місце розташування сайту:</h4>
-            <a href = "https://github.com/kuzmenkoff/online_library">Посилання на репозиторій</a>
-            <h4>Місце розташування звітного HTML-документа:</h4>
-            <a href = "https://github.com/kuzmenkoff/report_html">Посилання на репозиторій</a>
-            <h4>Скріншоти головної сторінки веб-сайту:</h4>
-            <img src="images/lab3/1.png">
-            <img src="images/lab3/2.png">
-            <h4>HTML-код веб-сайту:</h4>
-            <pre>
-                <code>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;JUSTBOOKS - Your Online Bookstore&lt;/title&gt;
-        &lt;link rel="stylesheet" href="styles.css"&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;header&gt;
-            &lt;h1&gt;JUSTBOOKS&lt;/h1&gt;
-            &lt;nav&gt;
-                &lt;ul class="navigation"&gt;
-                    &lt;li&gt;&lt;a style="text-decoration: underline; 
-                    text-underline-offset: 5px;" href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href="catalog.html"&gt;Catalog&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;/nav&gt;
-        &lt;/header&gt;
+        <hr>
+        <nav>
+            <a href="index.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №1</span>
+                </div>
+            </a>
+            <a href="lab2.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №2</span>
+                </div>
+            </a>
+            <a href="lab3.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №3</span>
+                </div>
+            </a>
+            <a href="lab4.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №4</span>
+                </div>
+            </a>
+            <a href="lab5.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №5</span>
+                </div>
+            </a>
+        </nav>
+        <hr>
+        <main>
+        <aside>
+            <button onclick="updateContent(1)">Тема, Мета, Місце розташування лабораторної роботи №3</button>
+            <button onclick="updateContent(2)">ЗАВДАННЯ №1<br>Зовнішній вигляд макету. Код макету.</button>
+            <button onclick="updateContent(3)">ЗАВДАННЯ №2<br>Фіксована таблична верстка</button>
+            <button onclick="updateContent(4)">ЗАВДАННЯ №2<br>Гумова таблична верстка</button>
+            <button onclick="updateContent(5)">ЗАВДАННЯ №2<br>Фіксована блокова верстка</button>
+            <button onclick="updateContent(6)">ЗАВДАННЯ №2<br>Гумова блокова верстка</button>
+            <button onclick="updateContent(7)">ЗАВДАННЯ №3<br>Зовнішній вигляд сторінки</button>
+            <button onclick="updateContent(8)">ЗАВДАННЯ №3<br>HTML-код</button>
+            <button onclick="updateContent(9)">ЗАВДАННЯ №3<br>CSS-код</button>
+            <button onclick="updateContent(10)">Висновки</button>
+        </aside>
+        <section id="content_area">
+        </section>
 
-
-
-        &lt;div class = "introduction"&gt;
-            &lt;h3&gt;We are JUSTBOOKS!&lt;/h3&gt;
-            &lt;p style="max-width: 634px; margin: 28px auto; 
-            text-align: center; font-size: 16px;"&gt;
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
-        &lt;/div&gt;
-
-
-
-        &lt;div class = "why_justbooks"&gt;
-            &lt;h3&gt;Why JUSTBOOKS!&lt;/h3&gt;
-            &lt;div class="why_section" style="margin-top: 17px;"&gt;
-                &lt;div class="text-column"&gt;
-                    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
-                &lt;/div&gt;
-                &lt;div class="image-column" style = "padding-left: 20px;"&gt;
-                    &lt;img src="images/Home page images/Books1.jpg"&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div class="why_section" style="margin-top: 60px;"&gt;
-                &lt;div class="image-column"&gt;
-                    &lt;img src="images/Home page images/Books2.jpg"&gt;
-                    &lt;/div&gt;
-                &lt;div class="text-column" style = "padding-left: 20px;"&gt;
-                    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div class="why_section" style="margin-top: 60px;"&gt;
-                &lt;div class="text-column"&gt;
-                    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
-                &lt;/div&gt;
-                &lt;div class="image-column" style = "padding-left: 20px;"&gt;
-                    &lt;img src="images/Home page images/Books3.jpg"&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-
-
-        &lt;div class = "start_adventure"&gt;
-            &lt;h3&gt;How to start your adventure on JUSTBOOKS?&lt;/h3&gt;
-            &lt;ol&gt;
-                &lt;li&gt;Sign up&lt;/li&gt;
-                &lt;li&gt;Open the catalog&lt;/li&gt;
-                &lt;li&gt;Find the book&lt;/li&gt;
-                &lt;li&gt;Start reading&lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/div&gt;
-
-
-
-        &lt;div class = "subscriptions"&gt;
-            &lt;h3&gt;Subscription levels&lt;/h3&gt;
-            &lt;table&gt;
-                &lt;tr&gt;
-                    &lt;th&gt;&lt;/th&gt;
-                    &lt;th&gt;Basic&lt;/th&gt;
-                    &lt;th&gt;Standart&lt;/th&gt;
-                    &lt;th&gt;Premium&lt;/th&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;Price per month&lt;/td&gt;
-                    &lt;td&gt;$0.00&lt;/td&gt;
-                    &lt;td&gt;$4,99&lt;/td&gt;
-                    &lt;td&gt;$7,99&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;Ability to read books&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;Ability to download books&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;Ability to add books to favourites&lt;/td&gt;
-                    &lt;td&gt;-&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr&gt;
-                    &lt;td&gt;Receive personal recomendations&lt;/td&gt;
-                    &lt;td&gt;-&lt;/td&gt;
-                    &lt;td&gt;-&lt;/td&gt;
-                    &lt;td&gt;+&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;/table&gt;
-        &lt;/div&gt;
-
-
-
-        &lt;div id = "contact_us"&gt;
-            &lt;h3 style="margin-top: 25px;"&gt;Contact Us&lt;/h3&gt;
-            &lt;form&gt;
-                &lt;input type="text" id="name" name="name" 
-                placeholder="Your name" required&gt;
-
-                &lt;input type="email" id="email" name="email" 
-                placeholder="Your email" required&gt;
-
-                &lt;textarea id="message" name="message" 
-                placeholder="Your message" required&gt;&lt;/textarea&gt;
-
-                &lt;button type="submit"&gt;Send&lt;/button&gt;
-            &lt;/form&gt;
-        &lt;/div&gt;
-
-
-
-        &lt;footer&gt;
-            &lt;hr style="width: 100%; margin: 15px 42px; color: white; margin: auto;"&gt;
-            &lt;h1&gt;JUSTBOOKS&lt;/h1&gt;
-            &lt;h4&gt;© 2024 JUSTBOOKS. All rights reserved.&lt;/h4&gt;
-        &lt;/footer&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-                </code>
-            </pre>
-            
-
-           
-        </div>
+        </main>
+       
     <body>
 
         

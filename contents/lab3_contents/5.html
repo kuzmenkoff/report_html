@@ -1,0 +1,67 @@
+<head>
+    <style>
+        #header, #footer {
+            background-color: rgb(51, 102, 255);
+            width: 1200px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            border: 2px solid black;
+        }
+        #header p, #footer p {
+            font-size: 26px;
+            font-weight: bold;
+            margin-left: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        #main {
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+        }
+
+        .side_block {
+            width: 300px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 204, 0);
+        }
+        .center_block {
+            width: 600px;
+            height: 600px;
+            border-right: 2px solid black;
+            border-left: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #main p {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "header">
+        <p>1</p>
+    </div>
+    <div id = "main">
+        <div class = "side_block"><p>2</p></div>
+        <div class = "center_block"><p>4</p></div>
+        <div class = "side_block"><p>5</p></div>
+    </div>
+    <div id = "footer">
+        <p>3</p>
+    </div>
+</body>
