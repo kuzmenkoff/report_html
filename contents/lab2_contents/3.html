@@ -18,29 +18,78 @@ HTML:
 
 CSS:
 header {
-background: #005773;
-min-height: 175px;
-width: 100%;
-margin: 0;
-padding-top: 1px;
-text-align: center;
+    background: #005773;
+    min-height: 175px;
+    width: 100%;
+    margin: 0;
+    padding-top: 1px;
+    text-align: center;
 }
 
 h1 {
-font-size: 40px; 
-font-weight: bold; 
-letter-spacing: 0.18em; 
-margin-top: 20px
+    font-size: 40px; 
+    font-weight: bold; 
+    letter-spacing: 0.18em; 
+    margin-top: 20px
 }
 
 nav {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 }
     </code>
 </pre>
-<p>Зображення об'єкта:</p>
-<img src="report_html\contents\lab2_contents\images\1.png">
-    
+<img src="contents\lab2_contents\images\1.png" alt="Хедер головної сторінки">
+<p class = "img_descr">Рисунок 1 - Хедер головної сторінки</p>
+<hr>
+<p>Налаштування шрифта для тегу &lt;body&gt; з використанням селектора тегу:</p>  
+<pre>
+    <code>
+CSS:
+body {
+    font-family: 'Istok Web', sans-serif;
+}
+    </code>
+</pre>
+<hr>
+
+<p>Налаштування секцій в main та їх заголовків з використанням селекторів тегу:</p>
+<pre>
+    <code>
+CSS:
+main section {
+    margin: auto;
+}
+
+main section h3 {
+    font-size: 32px; 
+    font-weight: bold; 
+    text-align: center;
+}
+    </code>
+</pre>
+<hr>
+<p>Налаштування футера з використанням селектора тегу:</p>
+<pre>
+    <code>
+HTML:
+&lt;footer&gt;
+    &lt;hr style="width: 100%; margin: 15px 42px; color: white; margin: auto;"&gt;
+    &lt;h1&gt;JUSTBOOKS&lt;/h1&gt;
+    &lt;h4&gt;© 2024 JUSTBOOKS. All rights reserved.&lt;/h4&gt;
+&lt;footer&gt;
+
+CSS:
+footer {
+    padding-top: 1px;
+    background-color: #005773;
+    height: 185px;
+    margin: auto;
+    text-align: center;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\2.png" alt="Футер головної сторінки">
+<p class = "img_descr">Рисунок 2 - Футер головної сторінки</p>

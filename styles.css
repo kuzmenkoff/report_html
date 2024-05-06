@@ -138,3 +138,16 @@ hr {
     background-color: gray;
     margin-bottom: 35px;
 }
+
+img {
+    display: block;
+    margin: auto;
+    min-width: 30%;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.img_descr {
+    text-align: center;
+    margin-top: 5px;
+}

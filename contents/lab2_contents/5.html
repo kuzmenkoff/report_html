@@ -1,0 +1,250 @@
+<head>
+    <link rel="stylesheet" href="report_html/styles.css">
+</head>
+<h3>Селектори ідентифікаторів</h3>
+<p>Налаштування секції "introduction": з використанням селектора ідентифікатора</p>
+<pre>
+    <code>
+HTML:
+&lt;main&gt;
+&lt;section id = "introduction"&gt;
+    &lt;h3&gt;We are JUSTBOOKS!&lt;/h3&gt;
+    &lt;p style="margin: 28px auto; text-align: center;"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
+&lt;/section&gt;
+
+
+CSS:
+#introduction {
+    margin-top: 33px;
+    width: 100%;
+    font-size: 22px;
+    max-width: 1200px;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\5.png" alt="Секція introduction">
+<p class = "img_descr">Рисунок 1 - Секція "introduction"</p>
+<hr>
+<p>Налаштування секції "why_justbooks" з використанням селектора ідентифікатора:</p>  
+<pre>
+    <code>
+HTML:
+&lt;section id = "why_justbooks"&gt;
+    &lt;h3&gt;Why JUSTBOOKS!&lt;/h3&gt;
+    &lt;div class="why_section" style="margin-top: 17px;"&gt;
+        &lt;div class="text-column"&gt;
+            &lt;p&gt;Etiam laoreet, mauris vel varius consequat, enim felis gravida dolor, eget auctor arcu sapien quis est. Etiam at risus ligula. Phasellus condimentum interdum dolor, vel vestibulum dolor porttitor a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent vulputate a felis in faucibus. Cras fermentum dolor at justo elementum, in sagittis quam interdum. Ut pellentesque, mauris sed cursus commodo, orci magna gravida mauris, ac pellentesque purus lacus eget libero. Sed tincidunt, mauris vel varius consequat, leo orci lobortis nunc, a fermentum quam velit quis metus.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="image-column" style = "padding-left: 20px;"&gt;
+            &lt;img src="images/Home page images/Books1.jpg"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="why_section" style="margin-top: 60px;"&gt;
+        &lt;div class="image-column"&gt;
+            &lt;img src="images/Home page images/Books2.jpg"&gt;
+        &lt;/div&gt;
+        &lt;div class="text-column" style = "padding-left: 20px;"&gt;
+            &lt;p&gt;Etiam laoreet, mauris vel varius consequat, enim felis gravida dolor, eget auctor arcu sapien quis est. Etiam at risus ligula. Phasellus condimentum interdum dolor, vel vestibulum dolor porttitor a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent vulputate a felis in faucibus. Cras fermentum dolor at justo elementum, in sagittis quam interdum. Ut pellentesque, mauris sed cursus commodo, orci magna gravida mauris, ac pellentesque purus lacus eget libero. Sed tincidunt, mauris vel varius consequat, leo orci lobortis nunc, a fermentum quam velit quis metus.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="why_section" style="margin-top: 60px;"&gt;
+        &lt;div class="text-column"&gt;
+            &lt;p&gt;Etiam laoreet, mauris vel varius consequat, enim felis gravida dolor, eget auctor arcu sapien quis est. Etiam at risus ligula. Phasellus condimentum interdum dolor, vel vestibulum dolor porttitor a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent vulputate a felis in faucibus. Cras fermentum dolor at justo elementum, in sagittis quam interdum. Ut pellentesque, mauris sed cursus commodo, orci magna gravida mauris, ac pellentesque purus lacus eget libero. Sed tincidunt, mauris vel varius consequat, leo orci lobortis nunc, a fermentum quam velit quis metus.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="image-column" style = "padding-left: 20px;"&gt;
+            &lt;img src="images/Home page images/Books3.jpg"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+CSS:
+#why_justbooks {
+    margin-top: 33px;
+    max-width: 1200px;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\6.png" alt="Секція why_justbooks">
+<p class = "img_descr">Рисунок 2 - Секція "why_justbooks"</p>
+<hr>
+
+
+<p>Налаштування секції "start_adventure" з використанням селектора ідентифікатора:</p>  
+<pre>
+    <code>
+HTML:
+&lt;section id = "start_adventure"&gt;
+    &lt;h3&gt;How to start your adventure on JUSTBOOKS?&lt;/h3&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Sign up&lt;/li&gt;
+        &lt;li&gt;Open the catalog&lt;/li&gt;
+        &lt;li&gt;Find the book&lt;/li&gt;
+        &lt;li&gt;Start reading&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/section&gt;
+
+CSS:
+#start_adventure {
+    margin: auto;
+    margin-top: 33px;
+    max-width: 1200px;
+}
+
+#start_adventure ol {
+    font-size: 22px;
+    text-align: left;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\7.png" alt="Секція start_adventure">
+<p class = "img_descr">Рисунок 3 - Секція "start_adventure"</p>
+<hr>
+
+
+
+<p>Налаштування секції "contact_us" з використанням селектора ідентифікатора:</p>  
+<pre>
+    <code>
+HTML:
+&lt;section id = "contact_us"&gt;
+    &lt;h3 style="margin-top: 25px;"&gt;Contact Us&lt;/h3&gt;
+    &lt;form&gt;
+        &lt;input type="text" id="name" name="name" placeholder="Your name" required&gt;
+
+        &lt;input type="email" id="email" name="email" placeholder="Your email" required&gt;
+
+        &lt;textarea id="message" name="message" placeholder="Your message" required&gt;&lt;/textarea&gt;
+
+        &lt;button type="submit"&gt;Send&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+
+CSS:
+#contact_us {
+    padding-top: 1px;
+    margin-top: 33px;
+    background-color: #005773;
+    height: 550px;
+    width: 100%;
+    
+}
+
+#contact_us form{
+    margin: auto;
+    max-width: 1000px;
+}
+
+#contact_us form input {
+    margin: auto;
+    width: 100%;
+    margin-top: 17px; 
+    height: 55px;
+    font-size: 24px;
+    border-color: black;
+}
+
+#contact_us form textarea {
+    margin-top: 17px; 
+    width: 100%;
+    height: 170px;
+    font-size: 24px;
+    border-color: black;
+    resize: none;
+}
+
+#contact_us form button[type="submit"] {
+    margin-top: 17px; 
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+    background-color: #62A4E0;
+    border-color: black;
+}
+
+#contact_us form button:hover {
+    background-color: #8DBBE6;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\8.png" alt="Секція contact_us">
+<p class = "img_descr">Рисунок 4 - Секція "contact_us"</p>
+<hr>
+
+
+
+<p>Налаштування секції "subscriptions" з використанням селектора ідентифікатора:</p>  
+<pre>
+    <code>
+HTML:
+&lt;section id = "subscriptions"&gt;
+    &lt;h3&gt;Subscription levels&lt;/h3&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;Basic&lt;/th&gt;
+            &lt;th&gt;Standart&lt;/th&gt;
+            &lt;th&gt;Premium&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Price per month&lt;/td&gt;
+            &lt;td&gt;$0.00&lt;/td&gt;
+            &lt;td&gt;$4,99&lt;/td&gt;
+            &lt;td&gt;$7,99&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ability to read books&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ability to download books&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ability to add books to favourites&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Receive personal recomendations&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+            &lt;td&gt;-&lt;/td&gt;
+            &lt;td&gt;+&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/section&gt;
+
+CSS:
+#subscriptions {
+    margin: auto;
+}
+
+#subscriptions > table {
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+#subscriptions table tr th {
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    background-color: #005773;
+}
+
+#subscriptions table tr td {
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    background-color: #62A4E0;
+}
+    </code>
+</pre>
+<img src="contents\lab2_contents\images\9.png" alt="Секція subscriptions">
+<p class = "img_descr">Рисунок 5 - Секція "subscriptions"</p>
