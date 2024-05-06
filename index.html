@@ -33,7 +33,7 @@
                             content.innerHTML = xhr.responseText;
                         } else {
                             console.error('Error loading the file: ', xhr.statusText);
-                            content.innerHTML = '<p>Не удалось загрузить содержимое. Пожалуйста, проверьте подключение к интернету или обратитесь к администратору сайта.</p>';
+                            content.innerHTML = '<p>Failed to load content.</p>';
                         }
                     }
                 };

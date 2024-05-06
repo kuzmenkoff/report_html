@@ -1,0 +1,52 @@
+<head>
+    <link rel="stylesheet" href="report_html/styles.css">
+</head>
+<h3>Способи підключення стилів</h3>
+<ol>
+    <li><strong>Inline Styles</strong> використовується для застосування стилів безпосередньо до конкретних HTML-елементів через атрибут "style".</li>
+    <p><strong>Приклад:</strong></p>
+    <pre>
+        <code>
+&lt;p style="color: red; font-size: 20px;"&gt;Червоний текст розміром 20 px.&lt;/p&gt;
+        </code>
+    </pre>
+    <hr>
+    <li><strong>Internal Styles</strong> використовується для розміщення CSS-коду всередині тегу &lt;style&gt; у &lt;head&gt; секції HTML-документа.</li>
+    <p><strong>Приклад:</strong></p>
+    <pre>
+        <code>
+&lt;head&gt;
+    &lt;style&gt;
+        p {
+        color: red;
+        font-size: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Червоний текст розміром 20 px.&lt;/p&gt;
+&lt;/body&gt;       
+        </code>
+    </pre>
+    <hr>
+    <li><strong>External Stylesheets</strong> використовується для зберігання CSS-коду в окремому файлі .css, який підключається до HTML за допомогою елементу &lt;link&gt;.</li>
+    <p><strong>Приклад:</strong></p>
+    <pre>
+        <code>
+index.html:
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+
+styles.css:
+body {
+    background-color: lightgray;
+}
+
+p {
+    color: red;
+}     
+        </code>
+    </pre>
+    
+</ol>

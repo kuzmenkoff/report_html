@@ -15,6 +15,11 @@ h2 {
     margin-top: 30px;
 }
 
+h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -127,4 +132,9 @@ main {
     padding-bottom: 15px;
     display: flex;     
     flex-direction: row; 
+}
+
+hr {
+    background-color: gray;
+    margin-bottom: 35px;
 }
