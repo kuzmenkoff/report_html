@@ -1,0 +1,122 @@
+<head>
+    <style>
+        img {
+            border-top-style: hidden;
+            border-bottom-style: hidden;
+        }
+    </style>
+</head>
+<h3>Пояснення</h3>
+<p>
+    Для реалізації верстки сайту для мобільної та планшетної версії використовуються медіа-запити. 
+    Медіа-запити в CSS — це інструмент для застосування стилів до веб-сторінок в залежності від характеристик пристрою, таких як розмір екрану, орієнтація та роздільна здатність. 
+    Це ключовий елемент адаптивного дизайну, який дозволяє створювати веб-сайти, що коректно відображаються на різних пристроях, від мобільних телефонів до настільних комп'ютерів.<br><br>
+    Для створення мобільної версії сайту використовуємо медіа-запит для екранів, ширина яких менше 768 пікселів. Для планшетної версії сайту використовуємо медіа-запит для екранів шириною 768-1279 пікселів.
+    Для більш широких екранів медіа-запити не використовуються.
+</p>
+<hr>
+<h3>CSS-код мобільної версії веб-сайту</h3>
+<pre>
+    <code>
+@media (max-width: 767px) {
+    main section h3 {
+        font-size: 28px; 
+        width: 90%;
+        margin: auto;
+    }
+
+    #introduction {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .why_section {
+        flex-direction: column-reverse;
+        padding-top: 20px;
+        width: 90%;
+    }
+
+    .why_section2 {
+        flex-direction: column;
+        padding-top: 20px;
+        width: 90%;
+    }
+
+    .text-column {
+        width: 90%;
+        font-size: 18px;
+        text-align: justify;
+        margin: auto;
+        padding-left: 0;
+    }
+
+    .why_section .image-column {
+        padding-left: 0px;
+    }
+    
+    .why_section2 .text-column {
+        padding-left: 0px;
+    }
+
+
+    .image-column {
+        margin: auto;
+        width: 90%;
+        padding-left: 0;
+        max-width: 400px;
+    }
+
+    .image-column img {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #start_adventure ol {
+        font-size: 18px;
+    }
+
+    #subscriptions > table {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    #contact_us form{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    #contact_us form input {
+        margin: auto;
+        width: 90%;
+        margin-top: 17px; 
+        height: 30px;
+        font-size: 14px;
+        border-color: black;
+    }
+    
+    #contact_us form textarea {
+        width: 90%;
+        height: 100px;
+        font-size: 14px;
+    }
+
+    #contact_us form button[type="submit"] { 
+        width: 120px;
+        font-size: 18px;
+        margin-left: 2.5%;
+        margin: 15px auto;
+    }
+}
+    </code>
+</pre>
+<hr>
+<h3>Скріншоти мобільної версії веб-сайту</h3>
+<img src="contents\lab4_contents\images\1.png" alt="Зовнішній вигляд мобільної версії">
+<img src="contents\lab4_contents\images\2.png" alt="Зовнішній вигляд мобільної версії">
+<img src="contents\lab4_contents\images\3.png" alt="Зовнішній вигляд мобільної версії">
+<img src="contents\lab4_contents\images\4.png" alt="Зовнішній вигляд мобільної версії">
+<img src="contents\lab4_contents\images\5.png" alt="Зовнішній вигляд мобільної версії">
+<img src="contents\lab4_contents\images\6.png" alt="Зовнішній вигляд мобільної версії">
