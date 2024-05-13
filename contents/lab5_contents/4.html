@@ -1,0 +1,132 @@
+<h3>Застосування JavaScript у власному WEB-застосунку</h3>
+<p>Для сторінки Catalog мого WEB-застосунку реалізуємо сценарій JavaScript, в якому додається обробник події 'DOMContentLoaded', що виконує функцію OutputBooks() після того, як весь HTML-документ буде повністю завантажений.
+    Функція OutputBooks() Виконує запит до JSON-файлу з інформацією про книги за допомогою fetch. Для кожної книги створюється новий HTML-документ, що містить зображення книги, назву, автора, кнопки завантаження та відкриття pdf-файлу.
+</p>
+
+<img src="contents\lab5_contents\images\1.png" alt="Сторінка каталогу">
+<p class = "img_descr">Рисунок 1 - Сторінка Catalog</p>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+document.addEventListener("DOMContentLoaded", function() {
+    OutputBooks();
+});
+
+function OutputBooks() {
+    fetch('books_data/books.json')
+    .then(response => response.json())
+    .then(books => {
+    const container = document.getElementById('books_output');
+    books.forEach(book => {
+        const bookCard = document.createElement('div');
+        bookCard.className = 'book_card';
+
+        const img = document.createElement('img');
+        img.src = book.image_path;
+        bookCard.appendChild(img);
+
+        const title = document.createElement('span');
+        title.className = 'title';
+        title.textContent = book.title;
+        bookCard.appendChild(title);
+
+        const author = document.createElement('span');
+        author.className = 'author';
+        author.textContent = book.author;
+        bookCard.appendChild(author);
+
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'book_card_buttons';
+        const openButton = document.createElement('button');
+        openButton.className = 'open_button';
+        openButton.textContent = 'Open';
+
+        openButton.addEventListener('click', () => {
+        window.open(book.pdf_path, '_blank');
+        });
+
+        buttonsContainer.appendChild(openButton);
+
+        const downloadButton = document.createElement('button');
+        downloadButton.className = 'download_button';
+        downloadButton.textContent = 'Download';
+
+        downloadButton.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = book.pdf_path;
+        link.download = book.pdf_path.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        });
+
+        buttonsContainer.appendChild(downloadButton);
+
+        const addButton = document.createElement('button');
+        addButton.className = 'add_button';
+        addButton.textContent = 'Add';
+        buttonsContainer.appendChild(addButton);
+
+        bookCard.appendChild(buttonsContainer);
+
+        container.appendChild(bookCard);
+    });
+    })
+    .catch(error => console.error('Error loading the books:', error));
+}
+    </code>
+</pre>
+<hr>
+<h3>Вміст JSON-файлу</h3>
+
+<pre>
+    <code>
+[
+    {
+        "title": "The Trial",
+        "author": "Franz Kafka",
+        "image_path": "books_data/books_images/The_Trial.jpg",
+        "pdf_path": "books_data/books_pdfs/The_Trial.pdf"
+    },
+    {
+        "title": "The Iron Heel",
+        "author": "Jack London",
+        "image_path": "books_data/books_images/The_Iron_Heel.jpg",
+        "pdf_path": "books_data/books_pdfs/The_Iron_Heel.pdf"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "image_path": "books_data/books_images/1984.jpg",
+        "pdf_path": "books_data/books_pdfs/1984.pdf"
+    },
+    {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "image_path": "books_data/books_images/Fahrenheit_451.jpg",
+        "pdf_path": "books_data/books_pdfs/Fahrenheit_451.pdf"
+    },
+    {
+        "title": "The Odyssey",
+        "author": "Homer",
+        "image_path": "books_data/books_images/The_Odyssey.jpg",
+        "pdf_path": "books_data/books_pdfs/The_Odyssey.pdf"
+    },
+    {
+        "title": "Divine Comedy",
+        "author": "Dante Alighieri",
+        "image_path": "books_data/books_images/Divine_Comedy.jpg",
+        "pdf_path": "books_data/books_pdfs/Divine_Comedy.pdf"
+    },
+    {
+        "title": "Don Quixote",
+        "author": "Miguel de Cervantes Saavedra",
+        "image_path": "books_data/books_images/Don_Quixote_de_la_Mancha.jpg",
+        "pdf_path": "books_data/books_pdfs/Don_Quixote_de_la_Mancha.pdf"
+    }
+
+
+]
+    </code>
+</pre>

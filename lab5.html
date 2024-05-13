@@ -17,6 +17,8 @@
                     filePath = 'contents\\lab5_contents\\3.html';
                 } else if (buttonId === 4) {
                     filePath = 'contents\\lab5_contents\\4.html';
+                } else if (buttonId === 5) {
+                    filePath = 'contents\\lab5_contents\\5.html';
                 }
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', filePath, true);
@@ -66,6 +68,31 @@
                     <span>Лабораторна робота №5</span>
                 </div>
             </a>
+            <a href="lab5.1.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №5.1</span>
+                </div>
+            </a>
+            <a href="lab6.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №6</span>
+                </div>
+            </a>
+            <a href="lab7.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №7</span>
+                </div>
+            </a>
+            <a href="lab8.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №8</span>
+                </div>
+            </a>
+            <a href="lab9.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №9</span>
+                </div>
+            </a>
         </nav>
         <hr>
         <main>
@@ -74,6 +101,7 @@
             <button onclick="updateContent(2)">ЗАВДАННЯ<br>(4 пункт)</button>
             <button onclick="updateContent(3)">ЗАВДАННЯ<br>(6 пункт)</button>
             <button onclick="updateContent(4)">Застосування JavaScript у власному WEB-застосунку</button>
+            <button onclick="updateContent(5)">Висновки</button>
         </aside>
         <section id="content_area">
         </section>
