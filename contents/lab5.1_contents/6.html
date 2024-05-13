@@ -1,0 +1,44 @@
+<h3>Завдання №9</h3>
+<p>
+    Поверніть об'єкт, в якому вказано кількість тегів.<br>
+    Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+    
+  
+</p>
+<hr>
+<h3>Виконання</h3>
+<form>
+    <button type="button" onclick="task9Execute()">Підрахувати кількість тегів</button><br><br>
+</form>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+const tweets = [
+    { id: "000", likes: 5, tags: ["js", "nodejs"] },
+    { id: "001", likes: 2, tags: ["html", "css"] },
+    { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+    { id: "003", likes: 8, tags: ["css", "react"] },
+    { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+
+function task9Execute() {
+    tagCounts = countTags(tweets);
+    console.log(tagCounts);
+}
+
+function countTags(tweets) {
+    const tagCounts = {};
+    tweets.forEach(tweet => {
+        tweet.tags.forEach(tag => {
+            if(tag in tagCounts) 
+                tagCounts[tag] += 1;
+            else
+            tagCounts[tag] = 1;
+        });
+    });
+    return tagCounts;
+} 
+    </code>
+</pre>

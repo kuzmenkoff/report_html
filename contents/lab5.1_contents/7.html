@@ -1,0 +1,49 @@
+<h3>Завдання №10</h3>
+<p>
+    Поверніть об'єкт, в якому вказано кількість тегів.<br>
+    Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+    
+  
+</p>
+<hr>
+<h3>Виконання</h3>
+<form>
+    <textarea id = "task10code"></textarea><br>
+    <button type="button" onclick="task10Execute()">Перевірити правильність закриття дужок</button><br><br>
+</form>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+
+function task10Execute() {
+    str = document.getElementById("task10code").value;
+    console.log(checkBrackets(str));
+}
+
+function checkBrackets(str) {
+    let stack = [];
+    let brackets = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+
+    for (let char of str) {
+        if (char in brackets) {
+            stack.push(char);
+        } else if (char === ')' || char === '}' || char === ']') {
+            if (stack.length === 0) {
+                return false;
+            } else {
+                let last = stack.pop();
+                if (brackets[last] !== char) {
+                    return false;
+                }
+            }
+        }
+    }
+    return stack.length === 0;
+}
+     </code>
+</pre>

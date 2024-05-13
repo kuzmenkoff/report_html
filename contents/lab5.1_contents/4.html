@@ -1,0 +1,40 @@
+<h3>Завдання №6</h3>
+<p>
+    Напишіть функцію, яка приймає массив об'єктів і повертає новий массив об'єктів,
+    у якому є знижка на 30 % на всі медикаменти, ціна яких перевищує 300 грн у масиві. Надайте id для кожного медикамента.
+  
+</p>
+<hr>
+<h3>Виконання</h3>
+<button type="button" onclick="task6Execute()">Вивести медикаменти зі знижкою</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+const medicines = [
+    { name: "Noshpa", price: 170 },
+    { name: "Analgin", price: 55 },
+    { name: "Quanil", price: 310 },
+    { name: "Alphacholine", price: 390 },
+];
+
+function task6Execute() {
+    updatedMedicines = UpdatePrices (medicines);
+    console.log(updatedMedicines);
+}
+
+function UpdatePrices (medList) {
+    id = 1;
+    medList.forEach(element => {
+        element.id = id;
+        if (element.price >= 300) {
+            element.price = Math.round(element.price * 0.7);
+        }
+        id++;
+    });
+
+    return medList;
+}
+    
+    </code>
+</pre>

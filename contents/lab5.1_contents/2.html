@@ -1,0 +1,47 @@
+
+
+<h3>Завдання №2</h3>
+<p>
+    Напишіть функцію getProductDetails, яка приймає ідентифікатор товару productId та дві колбек-функції successCallback та errorCallback.
+        Функція getProductDetails повинна отримати деталі про вказаний товар та передати їх у successCallback.
+        У випадку якщо товар не знайдено, викликається errorCallback і передається повідомлення про помилку.
+</p>
+<hr>
+<h3>Виконання</h3>
+<label for="product_id">ID товару:</label>
+<input type="number" id="productId" name="productId" min="1"><br><br>
+<button type="button" onclick="task2Execute()">Отримати товар</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+const productsDatabase = [
+    { id: '1', name: 'Laptop', price: 999.99 },
+    { id: '2', name: 'Smartphone', price: 699.99 },
+    { id: '3', name: 'Tablet', price: 399.99 },
+];
+
+function task2Execute() {
+    productId = document.getElementById("productId").value;
+    getProductDetailes(productId, 
+        (product) => {
+            console.log('Деталі товару:', product);
+        },
+        () => {
+            console.log('Товар не знайдено.');
+        }
+    );
+}
+
+function getProductDetailes(productId, successCallback, errorCallback) {
+    const product = productsDatabase.find(p => p.id === productId);
+
+    if (product) {
+        successCallback(product);
+    }
+    else {
+        errorCallback();
+    }
+}
+    </code>
+</pre>

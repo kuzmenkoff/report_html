@@ -1,0 +1,63 @@
+<h3>Завдання №8</h3>
+<p>
+    Напишіть функцію конструктор Storage, який створює об'єкти для управління складом товарів. При виклику отримуватиме один агрумент - початковий масив товарів,  і записувати їх у властивість items. 
+    Додайте методи класу:  <br>
+    getItems() - повертайте масив товарів  <br>
+    addItems(item) - отримує новий товар та додає його до поточних  <br>
+    removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних <br>
+  
+</p>
+<hr>
+<h3>Виконання</h3>
+<form>
+    <input type = "text" id = "itemName"><br><br>
+    <button type="button" onclick="task8AddItem()">Додати об'єкт</button>
+    <button type="button" onclick="task8RemoveItem()">Видалити об'єкт</button>
+    <button type="button" onclick="task8OutputItems()">Вивести об'єкти</button><br><br>
+</form>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+const arr = ["apple", "banana", "mango"]
+const storage = new Storage(['apple', 'banana', 'orange']);
+
+
+function task8OutputItems() {
+    console.log(storage.getItems());
+}
+
+function task8AddItem() {
+    if(document.getElementById("itemName").value != "")
+        storage.addItem(document.getElementById("itemName").value);
+}
+
+function task8RemoveItem() {
+    if(document.getElementById("itemName").value != "")
+        storage.removeItem(document.getElementById("itemName").value);
+}
+
+function Storage(items) {
+    this.items = items;
+
+    this.getItems = function() {
+        return this.items;
+    };
+
+    this.addItem = function(item) {
+        this.items.push(item);
+    };
+
+    this.removeItem = function(item) {
+        const index = this.items.indexOf(item);
+        if (index > -1) {
+            this.items.splice(index, 1);
+        }
+        else {
+            console.log("Такого товару не існує в списку.");
+        }
+    };
+}
+    
+    </code>
+</pre>
