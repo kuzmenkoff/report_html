@@ -1,0 +1,66 @@
+
+
+<h3>Завдання №7</h3>
+<p>
+    Напишіть скрипт, який:
+<ol>
+<li>Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.</li>
+
+<li>Для кожного элемента li.item у списку ul#categories, знайде і виведе в консоль текст заголовку елемента (тегу &lt;h2>) і кількість елементів в категорії (усіх &lt;li>, вкладених в нього).</li>
+</ol>
+    Для виконання цього завдання потрібно використати метод forEach() і властивості навігації по DOM.
+
+</p>
+
+
+<hr>
+<h3>Виконання</h3>
+<ul id="categories">
+    <li class="item">
+      <h4>Animals</h4>
+      <ul>
+        <li>Cat</li>
+        <li>Hamster</li>
+        <li>Horse</li>
+        <li>Parrot</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h4>Products</h4>
+      <ul>
+        <li>Bread</li>
+        <li>Prasley</li>
+        <li>Cheese</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h4>Technologies</h4>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+      </ul>
+    </li>
+  </ul>
+  <button type="button" onclick="task7Execute()">Підрахувати</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function task7Execute() {
+    // 1
+    const categories = document.querySelectorAll('#categories .item');
+    console.log("Number of categories:", categories.length);
+
+    //2
+    categories.forEach(category => {
+        const title = category.querySelector('h4').textContent;
+        const itemCount = category.querySelectorAll('ul li').length;
+        console.log("Category:", title);
+        console.log("Elements:", itemCount);
+        });
+}
+         </code>
+</pre>

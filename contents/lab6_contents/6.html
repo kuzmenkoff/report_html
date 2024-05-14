@@ -1,0 +1,56 @@
+
+
+<h3>Завдання №8</h3>
+<p>
+  Напишіть скрипт управління формою логіна.
+<ol>
+<li>Обробка відправлення форми form.login-form повинна відбуватися за подією submit.</li>
+<li>Під час відправлення форми сторінка не повинна перезавантажуватися.</li>
+<li>Якщо при сабміті у формі є незаповнені поля, виводь alert з попередженням про те, що 'All form fields must be filled in'. Не додавай на інпути атрибут required, валідація має відбуватися саме через JS.</li>
+<li>Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу до елементів форми використовуй властивість elements.</li>
+<li>При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.</li>
+</ol>
+
+</p>
+
+
+<hr>
+<h3>Виконання</h3>
+<form class="login-form" onsubmit="task8Execute(event)">
+  <label>
+    Email
+    <input type="email" name="email" />
+  </label><br><br>
+  <label>
+    Password
+    <input type="password" name="password" />
+  </label><br><br>
+  <button type="submit">Log in</button><br><br>
+</form>
+
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function task8Execute(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const email = form.elements.email.value.trim();
+  const password = form.elements.password.value.trim();
+
+  if (email === '' || password === '') {
+    alert('All form fields must be filled in');
+    return;
+  }
+
+  const formData = {
+    email: email,
+    password: password
+  };
+
+  console.log(formData);
+  form.reset();
+}
+         </code>
+</pre>

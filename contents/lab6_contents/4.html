@@ -1,0 +1,32 @@
+
+
+<h3>Завдання №6</h3>
+<p>
+    У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, маркирований список.<br>
+    Натиснувши кнопку "Подвоїти", збільшити значення
+у кожному елементі списку у 2 рази. Повторний натиск на  кнопці "Подвоїти", також збільшить значення у кожному елементі списку у 2 рази<br>
+</p>
+<hr>
+<h3>Виконання</h3>
+<ul id = "task6List">
+    <li>1</li>
+    <li>4</li>
+    <li>8</li>
+    <li>16</li>
+    <li>20</li>
+    <li>30</li>
+</ul>
+<button type="button" onclick="task6Double()">Подвоїти</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function task6Double() {
+    let listItems = document.querySelectorAll("#task6List li");
+
+    listItems.forEach(item => {
+        item.textContent = parseInt(item.textContent) * 2;
+    });
+}
+    </code>
+</pre>

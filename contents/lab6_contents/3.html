@@ -1,0 +1,39 @@
+<style>
+    #task4Block {
+        width: 100px;
+        height: 100px;
+        border-style: dashed;
+        border-color: red;
+    }
+</style>
+
+<h3>Завдання №4</h3>
+<p>
+    У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, блок (div), дві кнопки. <br>
+    Кнопка "Зменшити" робить квадрат менше на 15 пікселів. 
+Повторний натиск на кнопці Зменшити"    робить квадрат ще менше на 15 пікселів.<br>
+"Збільшити" – робить квадрат більше на 15 пікселів. Повторний натиск на кнопці "Зменшити" робить квадрат ще більше на 15 пікселів.<br>
+
+</p>
+<hr>
+<h3>Виконання</h3>
+<div id = "task4Block"></div><br>
+<button type="button" onclick="task4Increase()">Збільшити</button>
+<button type="button" onclick="task4Decrease()">Зменшити</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function task4Increase() {
+    block = document.getElementById("task4Block");
+    block.style.width = (parseInt(window.getComputedStyle(block).width) + 15) + "px";
+    block.style.height = (parseInt(window.getComputedStyle(block).height) + 15) + "px";
+}
+
+function task4Decrease() {
+    block = document.getElementById("task4Block");
+    block.style.width = (parseInt(window.getComputedStyle(block).width) - 15) + "px";
+    block.style.height = (parseInt(window.getComputedStyle(block).height) - 15) + "px";
+}
+    </code>
+</pre>

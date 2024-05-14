@@ -1,0 +1,24 @@
+<h3>Завдання №2</h3>
+<p>
+    У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, кнопка, два інпута (поля введення ).<br>
+    Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
+    Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.<br>
+
+</p>
+<hr>
+<h3>Виконання</h3>
+<input type="text" id="text1" name="text1">
+<input type="text" id="text2" name="text2">
+<button type="button" onclick="task2Execute()">SWAP ME</button><br><br>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function task2Execute() {
+    text1 = document.getElementById("text1").value;
+    text2 = document.getElementById("text2").value;
+    document.getElementById("text1").value = text2;
+    document.getElementById("text2").value = text1;
+}
+    </code>
+</pre>

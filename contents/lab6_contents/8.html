@@ -1,0 +1,69 @@
+
+
+<h3>Завдання №10</h3>
+<p>
+  Напишіть скрипт створення й очищення колекції елементів з наступним функціоналом.<br>
+  Є input, у який користувач вводить бажану кількість елементів. Після натискання на кнопку Create має рендеритися (додаватися в DOM) колекція з відповідною кількістю елементів і очищатися значення в інпуті. При повторному натисканні на кнопку Create поверх старої колекції має рендеритись нова. Після натискання на кнопку Destroy колекція елементів має очищатися.<br>
+  Після натискання користувачем на кнопку Create треба провалідувати значення в input, воно має бути в межах від 1 до 100 включно. Тільки якщо воно задоволяє умову, мають додаватися нові &lt;div> елементи в DOM.
+  <br>Для рендеру елементів на сторінці створи функцію createBoxes(amount), яка приймає один параметр — число, що зберігає кількість елементів для рендеру. Функція має створювати стільки &lt;div> елементів, скільки вказано в параметрі amount і додавати їх у DOM дочірніми елементами для div#boxes.<br>
+    <ol>
+    <li>Розміри першого &lt;div> елемента мають бути 30px на 30px.</li>
+    <li>Кожен наступний елемент повинен бути ширшим і вищим від попереднього на 10px.</li>
+    <li>Усі елементи повинні мати випадковий колір фону. Використовуй готову функцію getRandomHexColor() для отримання випадкового кольору.</li>
+    </ol>	
+
+</p>
+<hr>
+<h3>Виконання</h3>
+
+
+<div id="controls">
+  <input type="number" min="1" max="100" step="1" />
+  <button type="button" onclick = "Create()">Create</button>
+  <button type="button" onclick = "Destroy()">Destroy</button>
+</div>
+
+<div id="boxes"></div>
+
+
+
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+function createBoxes(amount) {
+  const boxesContainer = document.getElementById('boxes');
+
+  let size = 30;
+
+  for (let i = 0; i < amount; i++) {
+    const box = document.createElement('div');
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    box.style.margin = '5px';
+    boxesContainer.appendChild(box);
+    size += 10;
+  }
+}
+
+function Create() {
+  const input = document.querySelector('#controls input');
+  const amount = input.value;
+  if (amount >= 1 && amount <= 100)
+    createBoxes(amount);
+
+  input.value = '';
+}
+
+function Destroy() {
+  document.getElementById('boxes').innerHTML = '';
+}
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+         </code>
+</pre>
