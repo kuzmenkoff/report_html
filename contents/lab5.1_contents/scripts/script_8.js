@@ -1,5 +1,5 @@
 const arr = ["apple", "banana", "mango"]
-const storage = new Storage(['apple', 'banana', 'orange']);
+const storage = new Storage(arr);
 
 
 function task8OutputItems() {
