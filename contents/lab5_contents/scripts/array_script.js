@@ -6,13 +6,13 @@ function task4Execute() {
 }
 
 function generateArray() {
-    var size = document.getElementById("quantity").value;
+    let size = document.getElementById("quantity").value;
     size = parseInt(size, 10);
     if (isNaN(size) || size < 1 || size > 100) {
         document.getElementById("arrayOutput").innerText = "Введіть коректний розмір масиву від 1 до 100.";
         return;
     }
-    var array = Array.from({ length: size }, () => Math.floor(Math.random() * 100));
+    const array = Array.from({ length: size }, () => Math.floor(Math.random() * 100));
     document.getElementById("arrayOutput").innerText = array.join(", ");
     return array;
 }
