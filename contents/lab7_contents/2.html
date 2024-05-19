@@ -1,0 +1,190 @@
+<h3>Завдання №1</h3>
+<img src="contents\lab7_contents\images\1.png" alt="Сторінка галереї">
+<p class = "img_descr">Рисунок 1 - Сторінка галереї зображень"</p><br><br>
+<img src="contents\lab7_contents\images\2.png" alt="Модальне вікно">
+<p class = "img_descr">Рисунок 2 - Модальне вікно з оригінальним розміром зображення"</p><br><br>
+<hr>
+<h3>HTML-код</h3>
+<pre>
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Gallery&lt;/title&gt;
+        &lt;link rel="stylesheet" href="CSS/style.css"&gt;
+        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"&gt;
+        
+        &lt;script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"&gt;&lt;/script&gt;
+        &lt;script src = "JS/gallery.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;div class = "header_buttons"&gt;
+                &lt;button onclick="location.href='index.html'" style="text-decoration: underline; text-underline-offset: 5px;"&gt;Gallery&lt;/button&gt;
+                &lt;button onclick="location.href='2-form.html'"&gt;Forms&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;hr&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;div id = "gallery_area"&gt;&lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/body&gt; 
+&lt;/html&gt;
+    </code>
+</pre>
+<hr>
+
+<h3>CSS-код</h3>
+<pre>
+    <code>
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+#gallery_area {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 100px;
+    gap: 2%;
+    margin-bottom: 100px;
+    justify-content: center;
+    height: 100%;
+
+}
+
+#gallery_area img {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#gallery_area img:hover {
+    transform: scale(1.1);
+}
+
+header {
+    height: 150px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header hr {
+    color: gray;
+    width: 98%;
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    margin: 0;
+}
+
+.header_buttons {
+    display: flex;
+    gap: 5%;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.header_buttons button {
+    width: 200px;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightslategrey;
+    background-color:azure;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.header_buttons button:hover {
+    transform: scale(1.1);
+}
+    </code>
+</pre>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+const images = [
+    {
+        preview: 'images/preview/Cat1.jpg',
+        original: 'images/original/Cat1.jpg',
+        description: 'Tiny cute cat №1'
+    },
+    {
+        preview: 'images/preview/Cat2.jpg',
+        original: 'images/original/Cat2.jpg',
+        description: 'Tiny cute cat №2'
+    },
+    {
+        preview: 'images/preview/Cat3.jpg',
+        original: 'images/original/Cat3.jpg',
+        description: 'Tiny cute cat №3'
+    },
+    {
+        preview: 'images/preview/Cat4.jpg',
+        original: 'images/original/Cat4.jpg',
+        description: 'Tiny cute cat №4'
+    },
+    {
+        preview: 'images/preview/Cat5.jpg',
+        original: 'images/original/Cat5.jpg',
+        description: 'Tiny cute cat №5'
+    },
+    {
+        preview: 'images/preview/Cat6.jpg',
+        original: 'images/original/Cat6.jpg',
+        description: 'Tiny cute cat №6'
+    },
+    {
+        preview: 'images/preview/Cat7.jpg',
+        original: 'images/original/Cat7.jpg',
+        description: 'Tiny cute cat №7'
+    },
+    {
+        preview: 'images/preview/Cat8.jpg',
+        original: 'images/original/Cat8.jpg',
+        description: 'Tiny cute cat №8'
+    },
+    {
+        preview: 'images/preview/Cat9.jpg',
+        original: 'images/original/Cat9.jpg',
+        description: 'Tiny cute cat №9'
+    },
+]
+
+document.addEventListener("DOMContentLoaded", function() {
+    OutputImages();
+});
+
+function OutputImages() {
+    const container = document.getElementById('gallery_area');
+    images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.preview;
+        container.appendChild(img);
+
+        img.addEventListener('click', function(event) {
+            console.log(image.original);
+            const instance = basicLightbox.create(`
+                &lt;img src="${image.original}" alt="${image.description}">
+            `);
+            instance.show();
+        });
+    });
+}
+    </code>
+</pre>

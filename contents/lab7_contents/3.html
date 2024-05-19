@@ -1,0 +1,165 @@
+<h3>Завдання №2</h3>
+<img src = "contents\lab7_contents\images\3.png" alt="Форма">
+<p class = "img_descr">Рисунок 1 - Форма</p><br><br>
+<img src = "contents\lab7_contents\images\4.png" alt="Форма">
+<p class = "img_descr">Рисунок 2 - Виведення значень savedData після завантаження сторінки</p><br><br>
+<img src = "contents\lab7_contents\images\5.png" alt="Форма">
+<p class = "img_descr">Рисунок 3 - Сповіщення при незаповнених полях</p><br><br>
+<img src = "contents\lab7_contents\images\6.png" alt="Форма">
+<p class = "img_descr">Рисунок 4 - Виведення об'єкту formData після 'submit'</p><br><br>
+<hr>
+<h3>HTML-код</h3>
+<pre>
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Gallery&lt;/title&gt;
+        &lt;link rel="stylesheet" href="CSS/style.css"&gt;
+        
+        &lt;script src = "JS/2-form.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;div class = "header_buttons"&gt;
+                &lt;button onclick="location.href='index.html'"&gt;Gallery&lt;/button&gt;
+                &lt;button onclick="location.href='2-form.html'" style="text-decoration: underline; text-underline-offset: 5px;"&gt;Forms&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;hr&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;form class="feedback-form" autocomplete="off"&gt;
+                &lt;label&gt;
+                Email
+                &lt;input type="email" name="email" id = "email" autofocus /&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                Message
+                &lt;textarea name="message" rows="8" id = "message" &gt;&lt;/textarea&gt;
+                &lt;/label&gt;
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+          &lt;/form&gt;
+          
+        &lt;/main&gt;
+    &lt;/body&gt;
+       
+&lt;/html&gt;
+    </code>
+</pre>
+
+<hr>
+<h3>CSS-код</h3>
+<pre>
+    <code>
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    width: 408px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 150px;
+}
+
+.feedback-form label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.feedback-form input[type="email"],
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    border-width: 2px;
+    resize: none;
+}
+
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.feedback-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4E75FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 95px;
+}
+
+.feedback-form button:hover {
+    background-color: #6C8CFF;
+}
+    </code>
+</pre>
+<hr>
+<h3>JS-код</h3>
+<pre>
+    <code>
+document.addEventListener('DOMContentLoaded', (event) => {
+    // 1
+    let formData = {
+        email: "",
+        message: ""
+    };
+
+    const feedbackForm = document.querySelector('.feedback-form');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    // 2
+    feedbackForm.addEventListener('input', function(event) {
+        if (event.target.name === 'email') {
+            formData.email = event.target.value;
+        } else if (event.target.name === 'message') {
+            formData.message = event.target.value;
+        }
+
+        localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+    });
+
+    // 3
+    const savedData = localStorage.getItem('feedback-form-state');
+    if (savedData) {
+        formData = JSON.parse(savedData);
+        emailInput.value = formData.email;
+        messageInput.value = formData.message;
+        console.log("Saved data: " + savedData);
+    }
+
+    // 4
+    feedbackForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (formData.email.trim() === "" || formData.message.trim() === "") {
+            alert("Fill please all fields");
+        } else {
+            console.log(formData);
+
+            formData.email = "";
+            formData.message = "";
+            emailInput.value = '';
+            messageInput.value = '';
+            localStorage.removeItem('feedback-form-state');
+        }
+    });
+});
+    </code>
+</pre>
