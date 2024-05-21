@@ -1,0 +1,85 @@
+<h3>Тиждень 4</h3>
+<img src="contents\lab8_contents\images\11.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 1 - Сторінка з калькулятором</p><br><br>
+<img src="contents\lab8_contents\images\12.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 2 - Виконання операції add 5</p><br><br>
+<img src="contents\lab8_contents\images\13.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 3 - Виконання операції substract 5</p><br><br>
+<img src="contents\lab8_contents\images\14.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 4 - Виконання операції 2 * 5</p><br><br>
+<img src="contents\lab8_contents\images\15.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 5 - Виконання операції 10 / 5</p><br><br>
+<img src="contents\lab8_contents\images\16.png" alt="Калькулятор">
+<p class = "img_descr">Рисунок 6 - Виконання операції Reset result</p><br><br>
+<hr>
+<h4>App.js:</h4>
+<pre>
+    <code>
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState(0);
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleAdd = () => {
+    setResult(result + Number(input));
+    setInput('');
+  };
+
+  const handleSubtract = () => {
+    setResult(result - Number(input));
+    setInput('');
+  };
+
+  const handleMultiply = () => {
+    setResult(result * Number(input));
+    setInput('');
+  };
+
+  const handleDivide = () => {
+    setResult(result / Number(input));
+    setInput('');
+  };
+
+  const handleResetInput = () => {
+    setInput('');
+  };
+
+  const handleResetResult = () => {
+    setResult(0);
+  };
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;Simplest Working Calculator&lt;/h1&gt;
+      &lt;div&gt;
+        &lt;h2&gt;{result}&lt;/h2&gt;
+        &lt;input
+          type="number"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Enter a number"
+        /&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;button onClick={handleAdd}&gt;add&lt;/button&gt;
+        &lt;button onClick={handleSubtract}&gt;subtract&lt;/button&gt;
+        &lt;button onClick={handleMultiply}&gt;multiply&lt;/button&gt;
+        &lt;button onClick={handleDivide}&gt;divide&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;button onClick={handleResetInput}&gt;reset input&lt;/button&gt;
+        &lt;button onClick={handleResetResult}&gt;reset result&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+    </code>
+</pre>

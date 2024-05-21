@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ua">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IP-11 Kuzmenkov Dmytro report files</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            function updateContent(buttonId) {
+                var content = document.getElementById('content_area');
+                var filePath = '';
+                if (buttonId === 1) {
+                    filePath = 'contents\\lab8_contents\\1.html';
+                } else if (buttonId === 2) {
+                    filePath = 'contents\\lab8_contents\\2.html';
+                } else if (buttonId === 3) {
+                    filePath = 'contents\\lab8_contents\\3.html';
+                } else if (buttonId === 4) {
+                    filePath = 'contents\\lab8_contents\\4.html';
+                } else if (buttonId === 5) {
+                    filePath = 'contents\\lab8_contents\\5.html';
+                } 
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', filePath, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            content.innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Error loading the file: ', xhr.statusText);
+                            content.innerHTML = '<p>Failed to load content.</p>';
+                        }
+                    }
+                };
+                xhr.send();
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ З ДИСЦИПЛІНИ "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБОК"</h1>
+            <h2>Студент групи ІП-11 Кузьменков Дмитро Олегович</h2>
+        </header>
+        <hr>
+        <nav>
+            <a href="index.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №1</span>
+                </div>
+            </a>
+            <a href="lab2.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №2</span>
+                </div>
+            </a>
+            <a href="lab3.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №3</span>
+                </div>
+            </a>
+            <a href="lab4.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №4</span>
+                </div>
+            </a>
+            <a href="lab5.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №5</span>
+                </div>
+            </a>
+            <a href="lab5.1.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №5.1</span>
+                </div>
+            </a>
+            <a href="lab6.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №6</span>
+                </div>
+            </a>
+            <a href="lab7.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №7</span>
+                </div>
+            </a>
+            <a href="lab8.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №8</span>
+                </div>
+            </a>
+            <a href="lab9.html">
+                <div class = "nav_block">
+                    <span>Лабораторна робота №9</span>
+                </div>
+            </a>
+        </nav>
+        <hr>
+        <main>
+        <aside>
+            <button onclick="updateContent(1)">Сертифікат</button>
+            <button onclick="updateContent(2)">Тиждень 1</button>
+            <button onclick="updateContent(3)">Тиждень 2</button>
+            <button onclick="updateContent(4)">Тиждень 3</button>
+            <button onclick="updateContent(5)">Тиждень 4</button>
+        </aside>
+        <section id="content_area">
+        </section>
+
+
+        </main>
+       
+    <body>
+
+        
+
+
+
+       
+</html>
